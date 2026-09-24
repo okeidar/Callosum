@@ -1,0 +1,12 @@
+# Ignore task files and version folders
+TASKS.md
+
+# Ignore notes and scratch files
+notes.md
+
+# Python cache
+__pycache__/
+*.pyc
+.env
+
+.claude/

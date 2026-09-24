@@ -1,0 +1,23 @@
+{
+  "id": "callosum",
+  "name": "Callosum",
+  "description": "Knowledge wiki skills \u2014 classify, absorb, catalog, recall, and more",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "skills": [
+    "./skills/absorb",
+    "./skills/adapt",
+    "./skills/catalog",
+    "./skills/classify",
+    "./skills/incubate",
+    "./skills/investigate",
+    "./skills/librarian",
+    "./skills/prune",
+    "./skills/recall",
+    "./skills/status"
+  ],
+  "license": "MIT"
+}

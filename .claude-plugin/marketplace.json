@@ -1,0 +1,17 @@
+{
+  "name": "callosum",
+  "owner": {
+    "name": "Callosum"
+  },
+  "metadata": {
+    "description": "Knowledge wiki skills marketplace"
+  },
+  "plugins": [
+    {
+      "name": "callosum",
+      "source": "./",
+      "description": "Knowledge wiki skills — classify, absorb, catalog, recall, and more",
+      "license": "MIT"
+    }
+  ]
+}

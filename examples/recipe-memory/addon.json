@@ -1,0 +1,3 @@
+{
+  "prerequisite_note": "A Claude Code CLI enables semantic ingredient matching and feedback updates. Without it, browsing uses a clearly labeled exact-match fallback."
+}

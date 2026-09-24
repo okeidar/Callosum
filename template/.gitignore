@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Embeddings (Phase 5)
+*.embeddings
+
+# Temp files from atomic writes
+*.tmp
