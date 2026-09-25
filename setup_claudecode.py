@@ -35,7 +35,11 @@ INFRA_FILES = [
 
 
 def run(cmd):
-    return subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        return subprocess.run(cmd, capture_output=True, text=True)
+    except OSError as exc:
+        # The executable can disappear or lose execute permission after preflight.
+        return subprocess.CompletedProcess(cmd, 1, "", str(exc))
 
 
 def install_plugin():
@@ -156,6 +160,12 @@ def main():
     args = ap.parse_args()
 
     target = os.path.abspath(os.path.expanduser(args.target))
+    # Check the host before touching an existing mind or creating a new one. A failed
+    # marketplace command later still leaves a deployed mind for a deliberate retry.
+    if not args.no_plugin and shutil.which("claude") is None:
+        print("error: Claude Code CLI not found or not executable. Install Claude Code first, "
+              "then retry setup (or pass --no-plugin to deploy only).", file=sys.stderr)
+        return 1
     if args.refresh:
         deploy_ok = refresh(target)
     else:
@@ -174,4 +184,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
